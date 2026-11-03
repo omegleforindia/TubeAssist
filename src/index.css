@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── Design tokens ── */
+:root {
+  --bg:            #ffffff;
+  --bg-subtle:     #f7f7f5;
+  --bg-muted:      #f0f0ed;
+  --border:        #e2e2de;
+  --border-strong: #c8c8c2;
+  --text:          #0d0d0d;
+  --text-muted:    #6b6b65;
+  --text-faint:    #a8a8a2;
+  --accent:        #e63b2e;
+  --accent-dark:   #b82e23;
+  --success:       #1a7a3c;
+  --error:         #e63b2e;
+  --font-ui:       'Bricolage Grotesque', sans-serif;
+  --font-mono:     'JetBrains Mono', monospace;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Base ── */
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar        { width: 3px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: var(--border-strong); }
+::-webkit-scrollbar-thumb:hover { background: var(--text-faint); }

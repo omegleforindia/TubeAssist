@@ -1,0 +1,130 @@
+/* ── Row wrapper ── */
+.mb-row {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.mb-row.user { align-items: flex-end; }
+.mb-row.ai   { align-items: flex-start; }
+
+/* ── Avatar + bubble group ── */
+.mb-group {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.mb-row.user .mb-group { flex-direction: row-reverse; }
+.mb-row.ai   .mb-group { flex-direction: row; }
+
+/* ── Avatar ── */
+.mb-avatar {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.mb-avatar.user {
+  background: var(--accent);
+  color: #fff;
+}
+
+.mb-avatar.ai {
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+/* ── Bubble ── */
+.mb-bubble {
+  max-width: 480px;
+  padding: 10px 14px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.65;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.mb-row.user .mb-bubble {
+  background: var(--text);
+  color: var(--bg);
+  border-radius: 0;
+}
+
+.mb-row.ai .mb-bubble {
+  background: var(--bg-subtle);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 0;
+}
+
+/* markdown inside AI bubbles */
+.mb-row.ai .mb-bubble p  { margin-bottom: 0.5em; }
+.mb-row.ai .mb-bubble p:last-child { margin-bottom: 0; }
+.mb-row.ai .mb-bubble ul,
+.mb-row.ai .mb-bubble ol { padding-left: 1.2em; margin-bottom: 0.5em; }
+.mb-row.ai .mb-bubble code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: var(--bg-muted);
+  padding: 1px 5px;
+}
+.mb-row.ai .mb-bubble strong { font-weight: 800; }
+
+/* ── Timestamp ── */
+.mb-timestamp {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--text-faint);
+  margin-top: 4px;
+  padding: 0 32px;
+}
+
+/* ── Error bubble variant ── */
+.mb-row.ai .mb-bubble.error {
+  background: #fff5f5;
+  border-color: var(--error);
+  color: var(--error);
+}
+
+/* ── General knowledge badge ── */
+.mb-general-badge {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  font-style: normal;
+  opacity: 1;
+}
+
+/* ── Thinking bubble ── */
+.mb-thinking {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 16px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+}
+
+.mb-thinking-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--text-faint);
+}
+.mb-thinking-dot:nth-child(2) { background: var(--text-muted); }
+.mb-thinking-dot:nth-child(3) { background: var(--text); }

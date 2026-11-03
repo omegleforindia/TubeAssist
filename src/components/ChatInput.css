@@ -1,0 +1,102 @@
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Wrapper ── */
+.ci-wrap {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 14px 24px;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+/* ── Textarea ── */
+.ci-textarea-wrap {
+  flex: 1;
+  position: relative;
+}
+
+.ci-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 42px;
+  max-height: 140px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.55;
+  padding: 10px 14px;
+  outline: none;
+  resize: none;
+  overflow-y: auto;
+  caret-color: var(--accent);
+  display: block;
+}
+
+.ci-textarea::placeholder {
+  color: var(--text-faint);
+  font-weight: 300;
+}
+
+.ci-textarea:focus {
+  border-color: var(--text);
+  background: var(--bg);
+}
+
+.ci-textarea:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ── Send button ── */
+.ci-send-btn {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  background: var(--text);
+  border: none;
+  color: var(--bg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ci-send-btn:hover:not(:disabled) {
+  background: var(--accent);
+}
+
+.ci-send-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.ci-send-btn.thinking {
+  background: var(--bg-muted);
+  color: var(--text-muted);
+}
+
+/* spinner inside send button */
+.ci-send-btn.thinking svg {
+  animation: spin 0.8s linear infinite;
+}
+
+/* ── Guard hint ── */
+.ci-guard-hint {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-faint);
+  padding: 10px 24px 4px;
+}
+
+.ci-guard-hint span {
+  color: var(--accent);
+  font-weight: 500;
+}

@@ -1,0 +1,91 @@
+/* ── Body base (overrides index.css for layout) ── */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ui);
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ── Root layout ── */
+.app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  flex-shrink: 0;
+}
+
+.app-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-logo-icon {
+  width: 28px;
+  height: 28px;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.app-logo-name {
+  font-family: var(--font-ui);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.app-logo-name span {
+  color: var(--accent);
+}
+
+.app-header-meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* ── Video input section ── */
+.app-video-section {
+  padding: 20px 24px 0;
+  flex-shrink: 0;
+}
+
+/* ── Status bar section ── */
+.app-status-section {
+  flex-shrink: 0;
+}
+
+/* ── Chat area (grows to fill space) ── */
+.app-chat-area {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* ── Chat input section ── */
+.app-input-section {
+  flex-shrink: 0;
+}

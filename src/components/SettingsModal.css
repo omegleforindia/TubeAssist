@@ -1,0 +1,52 @@
+.sm-backdrop {
+  position: fixed; inset: 0; z-index: 50;
+  background: rgba(13, 13, 13, 0.45);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.sm-card {
+  width: 100%; max-width: 440px;
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  padding: 22px 22px 18px;
+  display: flex; flex-direction: column; gap: 8px;
+  font-family: var(--font-ui);
+}
+.sm-title { font-size: 18px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 6px; }
+.sm-label {
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted);
+  margin-top: 6px;
+}
+.sm-row { display: flex; gap: 8px; }
+.sm-input {
+  flex: 1; width: 100%;
+  font-family: var(--font-mono); font-size: 13px;
+  padding: 10px 12px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-subtle); color: var(--text);
+  outline: none;
+}
+.sm-input:focus { border-color: var(--accent); background: var(--bg); }
+.sm-hint { font-size: 12px; color: var(--text-muted); line-height: 1.45; }
+.sm-hint a { color: var(--accent); }
+.sm-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 12px; }
+.sm-ghost, .sm-primary {
+  font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+  padding: 9px 14px; cursor: pointer; border: 1px solid var(--border-strong);
+  background: var(--bg); color: var(--text);
+}
+.sm-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.sm-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.sm-ghost:hover { background: var(--bg-muted); }
+
+.app-settings-btn {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 6px 10px; cursor: pointer;
+  border: 1px solid var(--border-strong);
+  background: var(--bg); color: var(--text-muted);
+}
+.app-settings-btn:hover { color: var(--text); border-color: var(--text-muted); }
+.app-settings-btn.needs-key { border-color: var(--accent); color: var(--accent); }
+.app-header-right { display: flex; align-items: center; gap: 12px; }

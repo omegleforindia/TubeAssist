@@ -1,0 +1,87 @@
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Base bar ── */
+.sb-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  border-bottom: 1px solid transparent;
+}
+
+/* ── Variants ── */
+.sb-bar.processing {
+  background: var(--bg-subtle);
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+
+.sb-bar.thinking {
+  background: var(--bg-subtle);
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+
+.sb-bar.error {
+  background: #fff5f5;
+  border-color: var(--error);
+  color: var(--error);
+}
+
+.sb-bar.success {
+  background: #f4faf7;
+  border-color: #b2d9c2;
+  color: var(--success);
+}
+
+/* ── Icon slot ── */
+.sb-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* spinner for processing / thinking */
+.sb-bar.processing .sb-icon svg,
+.sb-bar.thinking   .sb-icon svg {
+  animation: spin 0.85s linear infinite;
+}
+
+/* dot for success */
+.sb-bar.success .sb-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--success);
+}
+
+/* ── Message text ── */
+.sb-text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.01em;
+}
+
+/* ── Dismiss button (error only) ── */
+.sb-dismiss {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--error);
+  opacity: 0.6;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.sb-dismiss:hover {
+  opacity: 1;
+}

@@ -1,0 +1,122 @@
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Wrapper ── */
+.vi-wrap {
+  font-family: var(--font-ui);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 20px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── Label ── */
+.vi-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.vi-label svg { color: var(--accent); }
+
+/* ── Input row ── */
+.vi-row {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.vi-input-wrap { flex: 1; }
+
+.vi-input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 42px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 400;
+  padding: 0 14px;
+  outline: none;
+  caret-color: var(--accent);
+}
+.vi-input::placeholder { color: var(--text-faint); }
+.vi-input:focus {
+  border-color: var(--text);
+  background: var(--bg);
+}
+.vi-input:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* border state modifiers */
+.vi-input.has-error   { border-color: var(--error); }
+.vi-input.has-success { border-color: var(--success); }
+
+/* ── Button ── */
+.vi-btn {
+  height: 42px;
+  padding: 0 20px;
+  background: var(--text);
+  color: var(--bg);
+  border: none;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: -0.01em;
+}
+.vi-btn:hover:not(:disabled) {
+  background: var(--accent);
+}
+.vi-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.vi-btn.loading  { background: var(--text-muted); }
+
+/* ── Feedback ── */
+.vi-feedback {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  min-height: 18px;
+}
+.vi-feedback.error   { color: var(--error); }
+.vi-feedback.success { color: var(--success); }
+.vi-feedback.loading { color: var(--text-muted); }
+
+/* spinner inside feedback */
+.vi-feedback svg { animation: spin 0.8s linear infinite; }
+
+/* ── Success title ── */
+.vi-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--success);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.vi-title-text {
+  color: var(--text);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 360px;
+}
