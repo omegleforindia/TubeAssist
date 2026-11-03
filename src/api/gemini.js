@@ -11,7 +11,7 @@ const API_BASE = "https://generativelanguage.googleapis.com/v1beta/models";
 const LS_KEY = "tubeassist_api_key";
 const LS_MODEL = "tubeassist_model";
 const LS_CACHE = "tubeassist_video_";
-export const DEFAULT_MODEL = "gemini-2.5-flash";
+export const DEFAULT_MODEL = "gemini-2.0-flash";
 const HISTORY_WINDOW = 6;
 const SENTINEL = "NO_RELEVANT_CONTEXT";
 
